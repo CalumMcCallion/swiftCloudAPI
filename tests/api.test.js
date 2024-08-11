@@ -9,10 +9,10 @@ const path = require("path");
 const app = express();
 app.use(cors());
 
-// In-memory SQLite database setup
+//in-memory SQLite database setup
 const db = new sqlite3.Database(":memory:");
 
-// Create tables and insert initial data
+//create tables and inserts initial data
 db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS songs (
@@ -28,7 +28,7 @@ db.serialize(() => {
     )
   `);
 
-  // Insert sample data
+  //inserts sample data
   db.run(
     `INSERT INTO songs (song, artist, writer, album, year, plays_june, plays_july, plays_august) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
     [

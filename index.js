@@ -8,13 +8,13 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Enable CORS
+//enables CORS
 app.use(cors());
 
-// Connect to SQLite database
+//connects to SQLite database
 const db = new sqlite3.Database(":memory:");
 
-// Create tables and insert initial data
+//creates table and inserts initial data
 db.serialize(() => {
   db.run(
     `
@@ -39,7 +39,7 @@ db.serialize(() => {
     }
   );
 
-  // Load data from CSV file
+  //loads the data from CSV
   const csvFilePath = path.join(__dirname, "SwiftCloudData.csv");
   fs.createReadStream(csvFilePath)
     .pipe(csv())
@@ -73,14 +73,14 @@ db.serialize(() => {
     });
 });
 
-// Example endpoint
+//example endpoint
 app.get("/", (req, res) => {
   res.send(
     "Welcome to SwiftCloud - The Number #1 app for Taylor Swifties! - Front-end Coming Soon!"
   );
 });
 
-// Endpoint to get all songs
+//endpoint to get all songs
 app.get("/songs", (req, res) => {
   db.all("SELECT * FROM songs", [], (err, rows) => {
     if (err) {
@@ -91,7 +91,7 @@ app.get("/songs", (req, res) => {
   });
 });
 
-// Endpoint to get songs by year
+//endpoint to get songs by year
 app.get("/songs/:year", (req, res) => {
   const year = parseInt(req.params.year, 10);
   db.all("SELECT * FROM songs WHERE year = ?", [year], (err, rows) => {
@@ -103,7 +103,7 @@ app.get("/songs/:year", (req, res) => {
   });
 });
 
-// Endpoint to get popular songs by month
+//endpoint to get popular songs by month
 app.get("/popular/songs", (req, res) => {
   const month = req.query.month;
   let column;
@@ -134,7 +134,7 @@ app.get("/popular/songs", (req, res) => {
   });
 });
 
-// Endpoint to search for songs
+//endpoint to search for songs
 app.get("/search", (req, res) => {
   const song = req.query.song || "";
   const artist = req.query.artist || "";
@@ -159,7 +159,7 @@ app.get("/search", (req, res) => {
   });
 });
 
-// Start the server
+//starts server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
