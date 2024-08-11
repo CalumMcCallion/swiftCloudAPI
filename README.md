@@ -7,6 +7,7 @@ SwiftCloud is an API designed for Taylor Swift fans to explore and analyse their
 - [Features](#features)
 - [Setup](#setup)
 - [Testing](#testing)
+- [Future Plans](#future-plans)
 
 ## Features
 
@@ -70,3 +71,9 @@ This project uses Jest and Supertest for testing the API endpoints.
 
 3. **Test Results**:
    - The results of the tests will be displayed in the terminal, showing passed and failed tests.
+
+## Future Plans
+
+- **Additional Data Sources**: Include more data sources to allow for the querying of more artists and genres.
+- **Advanced Analytics**: Offer more in-depth analytics, such as the users listening habits over time and song recommendations based off those habits.
+- **Flexible Queries**: Allow for more customisable queries so that the users requests may be very specific to what they want to retrieve from the data.
