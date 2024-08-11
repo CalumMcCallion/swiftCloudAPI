@@ -6,10 +6,7 @@ SwiftCloud is an API designed for Taylor Swift fans to explore and analyze their
 
 - [Features](#features)
 - [Setup](#setup)
-- [API Endpoints](#api-endpoints)
 - [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
