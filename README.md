@@ -1,6 +1,6 @@
 # SwiftCloud API
 
-SwiftCloud is an API designed for Taylor Swift fans to explore and analyze their music listening trends. It provides various endpoints to query Taylor Swift's music data, such as songs by year, popular songs by month, and custom searches.
+SwiftCloud is an API designed for Taylor Swift fans to explore and analyse their music listening trends. It provides various endpoints to query Taylor Swift's music data, such as songs by year, popular songs by month, and custom searches.
 
 ## Table of Contents
 
