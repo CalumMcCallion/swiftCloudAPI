@@ -51,57 +51,6 @@ SwiftCloud is an API designed for Taylor Swift fans to explore and analyze their
    npx nodemon index.js
    ```
 
-4. **Access the API**:
-   - The API will be running on `http://localhost:3000`.
-
-## API Endpoints
-
-1. **Get All Songs**
-
-   - **Endpoint**: `/songs`
-   - **Method**: `GET`
-   - **Description**: Retrieves all songs from the database.
-   - **Example Request**:
-     ```
-     curl -X GET http://localhost:3000/songs
-     ```
-
-2. **Get Songs by Year**
-
-   - **Endpoint**: `/songs/:year`
-   - **Method**: `GET`
-   - **Description**: Retrieves all songs released in the specified year.
-   - **URL Parameter**: `:year` (e.g., 2020)
-   - **Example Request**:
-     ```
-     curl -X GET http://localhost:3000/songs/2020
-     ```
-
-3. **Get Popular Songs by Month**
-
-   - **Endpoint**: `/popular/songs`
-   - **Method**: `GET`
-   - **Description**: Retrieves all songs sorted by their play counts in the specified month.
-   - **Query Parameter**: `month` (values: `june`, `july`, `august`)
-   - **Example Request**:
-     ```
-     curl -X GET "http://localhost:3000/popular/songs?month=july"
-     ```
-
-4. **Search for Songs**
-   - **Endpoint**: `/search`
-   - **Method**: `GET`
-   - **Description**: Searches for songs based on partial matches for song title, artist, writer, and album.
-   - **Query Parameters**:
-     - `song` (optional): Part of the song title to search for.
-     - `artist` (optional): Part of the artist name to search for.
-     - `writer` (optional): Part of the writer name to search for.
-     - `album` (optional): Part of the album name to search for.
-   - **Example Request**:
-     ```
-     curl -X GET "http://localhost:3000/search?song=Love&artist=Taylor"
-     ```
-
 ## Testing
 
 This project uses Jest and Supertest for testing the API endpoints.
